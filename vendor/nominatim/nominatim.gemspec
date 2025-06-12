@@ -8,8 +8,6 @@ Gem::Specification.new do |gem|
   gem.summary       = %q{A Ruby wrapper for the Nominatim API.}
   gem.homepage      = "https://github.com/jakubsvehla/nominatim"
 
-  gem.files         = `git ls-files`.split($\)
-  gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.name          = "nominatim"
   gem.require_paths = ["lib"]
