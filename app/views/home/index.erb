@@ -1,6 +1,24 @@
+<script type="text/javascript">
+    var checkInterval = setInterval(function () {
+        console.log('Interval Running');
+        if (App == "undefined" || App == "") {
+            // spinner ?
+        } else {
+            App.cable.subscriptions.create({channel: "AccountUpdatesChannel", id: "<%= current_account.id %>"}, {
+                received(data) {
+                    if (data === "updated") {
+                        window.location.reload();
+                    }
+                }
+            });
+            clearInterval(checkInterval);
+        }
+    }, 1000);
+</script>
+
 <% if current_account.located? %>
   <hgroup>
-    <h2>Success! Your address is somewhere near here:</h2>
+    <h2>Success! Your address is somewhere around here:</h2>
     <p> Latitude: <%= current_account.address_lat %> <br/> Longitude: <%= current_account.address_lng %> </p>
   </hgroup>
   <div id="map" class="leaflet-container" style="min-height: 400px">

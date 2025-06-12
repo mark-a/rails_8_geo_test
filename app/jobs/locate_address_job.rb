@@ -14,6 +14,7 @@ class LocateAddressJob < ApplicationJob
           account.update(address_lat: place.lat, address_lng: place.lon, located: true)
         end
         account.update(change_processed: true)
+        AccountUpdatesChannel.broadcast_to(account, "updated")
       end
     end
   end

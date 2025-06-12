@@ -11,7 +11,7 @@ class Account < ApplicationRecord
 
   def start_locate_job
     self.update(located: false, change_processed: false, address_lat: nil, address_lng: nil)
-    LocateAddressJob.perform_later(self)
+    LocateAddressJob.set(wait: 5.seconds).perform_later(self)
   end
 
   def start_locate_job_after_change

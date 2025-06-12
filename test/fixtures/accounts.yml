@@ -1,4 +1,4 @@
 alice:
   email: alice@example.com
   encrypted_password: <%= Devise::Encryptor.digest(Account, 'password') %>
-  address: "107-19 Guy R. Brewer Boulevard Jamaica, New York "
+  address: "107-19 Guy R. Brewer Boulevard Jamaica, New York"
