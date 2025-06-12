@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def landing
-    redirect_to(action: :home,
+    redirect_to(action: :index,
                 params: request.query_parameters) if account_signed_in?
   end
 

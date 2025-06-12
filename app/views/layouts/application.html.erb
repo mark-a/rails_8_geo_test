@@ -36,10 +36,13 @@
         <%= link_to('Edit account', edit_account_registration_path) %>
       </li>
     </ul>
+    <ul>
+      <li>Account: <%= current_account.email %></li>
+    </ul>
   <% else %>
     <ul>
       <li>
-        <%= link_to "Login", new_account_session_path, rel: 'noopener noreferrer' %>
+        <%= link_to "Log in", new_account_session_path, rel: 'noopener noreferrer' %>
       </li>
       <li>
         <%= link_to "Sign up", new_account_registration_path, rel: 'noopener noreferrer' %>

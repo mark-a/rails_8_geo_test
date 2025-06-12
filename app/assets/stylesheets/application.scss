@@ -9,3 +9,12 @@
  * Consider organizing styles into separate files for maintainability.
  */
 @import "pico";
+
+@import "leaflet";
+
+.sceneParent {
+  position: fixed;
+  inset: 0;
+
+  cursor: grab;
+}

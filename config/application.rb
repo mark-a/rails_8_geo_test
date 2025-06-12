@@ -16,7 +16,7 @@ module GeoTest
     # Common ones are `templates`, `generators`, or `middleware`, for example.
     config.autoload_lib(ignore: %w[assets tasks])
 
-    config.mailer_sender = 'no-reply@geoclub.iomind.de'
+    config.mailer_sender = "no-reply@geoclub.iomind.de"
 
     # Configuration for the application, engines, and railties goes here.
     #

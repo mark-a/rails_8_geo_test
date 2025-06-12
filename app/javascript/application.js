@@ -2,6 +2,8 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 
+import "leaflet"
+
 import Rails from "@rails/ujs";
 Rails.start();
 

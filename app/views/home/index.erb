@@ -1,1 +1,27 @@
-<%= current_account.to_json %>>
+<% if current_account.located? %>
+  <hgroup>
+    <h2>Success! Your address is somewhere near here:</h2>
+    <p> Latitude: <%= current_account.address_lat %> <br/> Longitude: <%= current_account.address_lng %> </p>
+  </hgroup>
+  <div id="map" class="leaflet-container" style="min-height: 400px">
+    <div data-controller="map"
+         data-map-latitude-value="<%= current_account.address_lat %>"
+         data-map-longitude-value="<%= current_account.address_lng %>">
+    </div>
+  </div>
+  <div data-controller="sphere"
+       data-sphere-latitude-value="<%= current_account.address_lat %>"
+       data-sphere-longitude-value="<%= current_account.address_lng %>">
+    <div class="sceneParent"></div>
+  </div>
+<% elsif current_account.change_processed? %>
+  <hgroup>
+    <h2>We could not locate your address</h2>
+    <p>Please try to edit your address in your  <%= link_to('Account', edit_account_registration_path) %></p>
+  </hgroup>
+<% else %>
+  <hgroup>
+    <h2>We are currently locating your address</h2>
+    <p>Please stay tuned...</p>
+  </hgroup>
+<% end %>
