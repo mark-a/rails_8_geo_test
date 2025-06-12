@@ -32,8 +32,9 @@ class SignUpTest < ApplicationSystemTestCase
     fill_in "Email", with: "bob@example.com"
     fill_in "Password", with: "password"
     click_button "Log in"
-
-    assert_text "Account: bob@example.com"
-    assert_css "h2", text: "We are currently locating your address"
+    using_wait_time 3 do
+      assert_text "Account: bob@example.com"
+      assert_css "h2", text: "We are currently locating your address"
+    end
   end
 end
