@@ -10,3 +10,7 @@ pin "leaflet" # @1.9.4
 pin "leaflet-css" # @0.1.0
 pin "@rails/actioncable", to: "actioncable.esm.js"
 pin_all_from "app/javascript/channels", under: "channels"
+pin "three-core",  to: "three.core.min.js" # @0.177.0
+pin "three", to: "three.module.min.js" # @0.177.0
+pin "lil-gui" # @0.20.0
+pin "three/orbit", to: "three.orbit.js" # @0.177.0

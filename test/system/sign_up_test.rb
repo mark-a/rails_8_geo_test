@@ -31,10 +31,9 @@ class SignUpTest < ApplicationSystemTestCase
     click_button "Log in"
     fill_in "Email", with: "bob@example.com"
     fill_in "Password", with: "password"
-    click_button "Log in"
-    using_wait_time 3 do
-      assert_text "Account: bob@example.com"
-      assert_css "h2", text: "We are currently locating your address"
-    end
+    click_button "Log in", wait: 5.seconds
+
+    assert_text "Account: bob@example.com"
+    assert_css "h2", text: "We are currently locating your address"
   end
 end

@@ -1,10 +1,9 @@
 import {Controller} from "@hotwired/stimulus"
 
 
-import * as THREE from "https://esm.sh/three";
-import {OrbitControls} from "https://esm.sh/three/examples/jsm/controls/OrbitControls";
-import GUI from "https://esm.sh/lil-gui";
-import gsap from "https://esm.sh/gsap";
+import * as THREE from "three";
+import { OrbitControls } from "three/orbit"
+import GUI from "lil-gui";
 
 
 export default class extends Controller {

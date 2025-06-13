@@ -23,7 +23,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_12_115700) do
     t.string "unconfirmed_email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "address", null: false
+    t.text "address", null: false
     t.decimal "address_lng", precision: 8, scale: 5
     t.decimal "address_lat", precision: 8, scale: 5
     t.boolean "located", default: false, null: false
