@@ -28,6 +28,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_12_115700) do
     t.decimal "address_lat", precision: 8, scale: 5
     t.boolean "located", default: false, null: false
     t.boolean "change_processed", default: false, null: false
+    t.json "address_details"
     t.index ["confirmation_token"], name: "index_accounts_on_confirmation_token", unique: true
     t.index ["email"], name: "index_accounts_on_email", unique: true
     t.index ["reset_password_token"], name: "index_accounts_on_reset_password_token", unique: true

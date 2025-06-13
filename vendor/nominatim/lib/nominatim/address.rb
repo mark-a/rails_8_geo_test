@@ -79,5 +79,9 @@ module Nominatim
     def village
       @village ||= @attrs[:village]
     end
+
+    def to_h
+      @attrs
+    end
   end
 end

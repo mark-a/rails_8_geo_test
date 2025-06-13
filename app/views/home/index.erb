@@ -18,7 +18,15 @@
 <% if current_account.located? %>
   <hgroup>
     <h2>Success! Your address is somewhere around here:</h2>
-    <p> Latitude: <%= current_account.address_lat %> <br/> Longitude: <%= current_account.address_lng %> </p>
+
+    <article>
+      <p> Latitude: <%= current_account.address_lat %> <br/> Longitude: <%= current_account.address_lng %> </p>
+      <p>
+        <% current_account.address_details.each do |key, value| %>
+          <%= key.capitalize.gsub("_", " ") %>: <%= value %> <br/>
+        <% end %>
+      </p>
+    </article>
   </hgroup>
   <div id="map" class="leaflet-container" style="min-height: 400px">
     <div data-controller="map"

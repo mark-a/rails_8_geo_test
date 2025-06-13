@@ -10,7 +10,7 @@ class Account < ApplicationRecord
   after_update :start_locate_job_after_change
 
   def start_locate_job
-    self.update(located: false, change_processed: false, address_lat: nil, address_lng: nil)
+    self.update(located: false, change_processed: false, address_lat: nil, address_lng: nil, address_details: nil)
     LocateAddressJob.set(wait: 5.seconds).perform_later(self)
   end
 
