@@ -28,10 +28,6 @@ class SignUpTest < ApplicationSystemTestCase
     visit target_link["href"]
 
     assert_text "Your email address has been successfully confirmed."
-    click_button "Log in"
-    fill_in "Email", with: "bob@example.com"
-    fill_in "Password", with: "password"
-    click_button "Log in", wait: 5.seconds
 
     assert_text "Account: bob@example.com"
     assert_css "h2", text: "We are currently locating your address"
