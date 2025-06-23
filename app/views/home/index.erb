@@ -1,6 +1,6 @@
 <script type="text/javascript">
     var checkInterval = setInterval(function () {
-        if (App == "undefined" || App == "") {
+        if (typeof(App) == "undefined" || App == "") {
             // spinner ?
         } else {
             App.cable.subscriptions.create({channel: "AccountUpdatesChannel", id: "<%= current_account.id %>"}, {
